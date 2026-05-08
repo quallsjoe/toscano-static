@@ -1,0 +1,614 @@
+/*
+ Theme Name:   Toscano
+ Theme URI:    
+ Description:  Child Theme
+ Author:       
+ Author URI:   
+ Template:     salient
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  salient-child
+*/
+
+@font-face {
+  font-family: 'Brandon Grotesque Medium';
+  src: url('fonts/brandongrotesque-medium-webfont.woff2') format('woff2'),
+       url('fonts/brandongrotesque-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Brandon Grotesque Black';
+  src: url('fonts/brandongrotesque-black-webfont.woff2') format('woff2'),
+       url('fonts/brandongrotesque-black-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* body.post-type-archive-product,
+body.post-type-archive-product h1,
+body.post-type-archive-product h2,
+body.post-type-archive-product h3,
+body.post-type-archive-product h4,
+body.post-type-archive-product h5,
+body.post-type-archive-product p,
+body.post-type-archive-product a {
+  font-family: 'Serifa BT', sans-serif !important;
+} */
+
+/* Remove Visual Search overlay icon for Edge users */
+img { pointer-events: none; }
+
+/* Make featured products on recipe pages clickable */
+.clickable-image { pointer-events: auto; }
+
+.woocommerce-product-gallery__image {
+  pointer-events: none !important;
+}
+
+/* main content max width 1170px */
+.container.main-content {
+  max-width: 1170px;
+}
+
+/* center text in product summary */
+div.entry-summary {
+  text-align: center;
+  padding-top:30px;
+}
+
+/* Romance copy text size larger */
+.romance-copy, .product-weight {
+  font-size: 2.0em;
+  margin-top: 30px;
+  line-height: 1.3em;
+}
+
+.product-weight {
+  font-size: 1.5em;
+  margin-top: 30px;
+}
+
+
+/* single product main image padding 10% */
+.single-product-main-image {
+  padding: 30px;
+}
+
+/* Nutritional information */
+.nutritional-information-container {
+  text-align: left;
+  margin: 20px 0px;
+  border-top: 2px solid #ddd;
+  /* border-bottom: 2px solid #569acf; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nutritional-row {
+  display:flex;
+  flex-direction:row;  
+  width: 100%;
+  gap: 0px 30px;
+}
+
+.nutritional-column {
+  flex-basis: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .nutritional-row {
+    flex-direction: column;
+  }
+}
+
+/* hide breadcrumbs from product pages */
+.woocommerce-breadcrumb {
+  display: none;
+}
+
+/* hide result count from product archive pages */
+.woocommerce-result-count {
+  display: none;
+}
+
+/* hide product sorting from product archive pages */
+.woocommerce-ordering {
+  display: none;
+}
+
+/* hide product add to cart button from product archive pages */
+.product-add-to-cart {
+  display: none;
+}
+
+/* div.container.main-content {
+  padding-top: 30px;
+} */
+
+/*
+.post-type-archive-product .inside-article {
+  max-width: unset !important;
+}
+
+.post-type-archive-product .products {
+  display: flex;
+  justify-content: center;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+  margin-right: 0;
+}
+*/
+
+/* add 18px top padding to social icons */
+.social-menu.menu-item {
+  padding-top: 18px;
+}
+
+/* hide the single meta social icons 
+#single-meta {
+  display: none;
+}
+*/
+body.single-product div.product .product_title {
+  padding-right: 0px;
+}
+
+/* footer-widgets should have dark background rgb 51,51,51 and light text rgb 222,222,222 */
+#footer-outer {
+  background-color: rgb(51,51,51) !important;
+  color: rgb(222,222,222) !important;
+  text-align: left;
+}
+#footer-outer .row {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+#footer-outer #copyright p:not(.nothing) {
+  color: rgb(222,222,222) !important;
+  text-align: center;
+}
+#footer-outer #copyright li a:not(.nothing) {
+  color: rgb(222,222,222) !important;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+#footer-outer #footer-widgets p,
+#footer-outer a:not(.nothing),
+#footer-outer a:visited,
+#footer-outer a:hover {
+  color: rgb(222,222,222) !important;
+  text-align: left;
+}
+#footer-outer h2 {
+  color: rgb(222,222,222) !important;
+  font-weight: 700;
+  text-align: left;
+}
+#footer-outer .wp-block-button {
+  border: 1px solid rgb(222,222,222) !important;
+  border-radius: 2px;  
+  box-shadow: none;
+  padding: 0px;
+}
+#footer-outer .wp-block-button__link {
+  color: rgb(222,222,222) !important;
+  background-color: rgb(51,51,51) !important;
+  text-decoration: none;
+  padding: 0.1em 1em;
+  /* padding: calc(.667em + 2px) calc(1.333em + 2px); */
+  font-size: 1.125em;
+  text-transform: uppercase;
+}
+#footer-outer li.wp-social-link {
+  list-style: none;
+  float: none;
+  display: inline-block;
+  margin: 0 10px;
+  margin-bottom: 0px;
+  width: auto;
+  background-color: transparent;
+}
+#footer-outer li.wp-social-link a {
+  display: inline-block;
+  padding-top: 0px;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.2em;
+  text-align: center;
+  font-size: 1.5em;
+  color: rgb(222,222,222) !important;
+  border-radius: 50%;
+  border: 1px solid rgb(222,222,222) !important;
+  transition: all 0.3s ease-in-out;
+}
+#footer-outer li.wp-social-link a:hover {
+  color: rgb(51,51,51) !important;
+  background-color: rgb(222,222,222) !important;
+  border: 1px solid rgb(222,222,222) !important;
+}
+#footer-outer .wp-social-link a svg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  fill: currentColor;
+}
+@media (max-width: 768px) {
+  #footer-outer {
+    text-align: center;
+  }
+  #footer-outer p,
+  #footer-outer h2,
+  #footer-outer a:not(.nothing),
+  #footer-outer a:visited,
+  #footer-outer a:hover {
+    text-align: center !important;
+  }
+  #footer-outer .is-layout-flex {
+    justify-content: center !important;
+  }
+}
+
+/*
+ * Shop Category Pages
+ */
+
+/* hide breadcrumbs from product pages */
+.woocommerce-breadcrumb {
+  display: none;
+}
+/* hide Nectar shop header */
+.nectar-shop-header h1.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px !important;
+}
+.cat-header h2 {
+  text-align: center;
+  
+  
+  font-style: normal;
+  text-transform: capitalize;
+  font-size: 48px !important;
+  line-height: 42px;
+  position: relative;
+}
+
+.cat-header h2::before,
+.cat-header h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-top: 1px solid #000;
+  width: 22%;
+  margin-top: -1px;
+}
+.cat-header h2::before {
+  left: 0;
+}
+.cat-header h2::after {
+  right: 0;
+}
+@media (max-width: 768px) {
+  .cat-header h2::before,
+  .cat-header h2::after {
+    width: 20vw;
+  }
+  .cat-header h2 {
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+  /* .cat-header.cat-header-pizza-bases-and-breads h2::before,
+  .cat-header.cat-header-pizza-bases-and-breads h2::after {
+    display: none;
+  } */
+}
+
+ul.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ul.products li.product .romance-copy {
+  display: none;
+}
+ul.products li.product img {
+  height: 300px !important;
+  width: 222px !important;
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+}
+ul.products li.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px !important;
+}
+ul.products li.product h2 {
+  text-align: center;
+  
+  
+  font-size: 24px !important;
+  margin-bottom: 10px;
+  min-height: 75px;
+}
+ul.products li.product h5 a {
+  background-color: transparent;
+  border: 2px solid #111;
+  color: #111;
+}
+@media screen and (max-width: 768px) {
+  ul.products li.product {
+    width: 100% !important;
+    margin-right: 0 !important;
+  }
+  ul.products li.product img {
+    width: 300px !important;
+  }
+  ul.products li.product.post-1767 img {
+    width: 230px !important;
+    height: 230px !important;
+  }
+}
+.tax-product_cat .row.cat-header {
+  display: none;
+}
+.woocommerce-products-header {
+  /* visibility: hidden;  */
+  text-align: center;
+  margin-bottom: 40px;
+}
+.tax-product_cat .woocommerce-products-header {
+  display: none; 
+  text-align: center;
+}
+.post-type-archive h1.page-title {
+  display: none;
+}
+/* #page-header-wrap .col {
+  
+  display: flex;
+  justify-content: center;
+}
+#page-header-wrap h1 {
+  text-align: center;
+} */
+
+/*
+ * Single Product Pages
+ */
+
+.woocommerce-product-gallery__image img {
+  max-height: 529px !important;
+  min-height: 300px !important;
+  object-fit: contain;
+  object-position: center;
+}
+@media (max-width: 768px) {
+  .woocommerce-product-gallery__image img {
+    height: 350px !important;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .nectar-prod-wrap,
+  .product-single {
+    display: flex;
+    min-height: 300px;
+    align-items: center;
+    padding: 20px;
+  }
+  .product-wrap {
+    padding: 30px;
+  }
+} */
+
+/* @media (max-width: 768px) {
+  .nectar-prod-wrap,
+  .product-single,
+  .nutritional-information-container {
+    padding: 15px;
+  }
+  .woocommerce-product-gallery__image img {
+    height: 350px !important;
+    object-fit: contain;
+    object-position: center;
+  }
+  .product-wrap {
+    padding: 40px;
+  }
+} */
+
+/* .product-wrap img {
+  height: 332px !important;
+  object-fit: contain;
+  object-position: center;
+} */
+
+/**
+ * Home Page on Mobile
+ */
+
+@media (max-width: 768px) {
+  body.home .span_12.center {
+    padding: 0 20px !important;
+  }
+  h4 {
+    text-align: center !important;
+  }
+  body.home .stockists {
+    padding: 10px !important;
+    justify-content: center !important;
+  }
+  body.home .stockists .wpb_column {
+    width: 50% !important;
+  }
+  body.home .wpb_row {
+    margin-bottom: 0px !important;
+  }
+  body.home vc_col-sm-2 {
+    display: none !important;
+  }
+  body.home #intro h1 {
+    font-size: 36px !important;
+  }
+}
+
+/**
+  * Nav on Mobile
+  */
+
+@media (max-width: 768px) {
+  /* social icons in menu side by side */
+  #mobile-menu li.social-menu {
+    width: 20% !important;
+    text-align: left;
+    padding-left: 15px !important;
+    padding: 0 !important;
+  }
+  /* last social icon in menu */
+  #mobile-menu li.social-menu:last-child {
+    width: 80% !important;
+  }
+  #mobile-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+  }
+  #mobile-menu ul li:not(.social-menu) {
+    width: 100% !important;
+  }
+}
+/**
+  * Contact Page Mobile
+  */
+@media (max-width: 768px) {
+  body.page-id-585 .span_12 {
+    text-align: center !important;
+    padding: 0 20px !important;
+  }
+  body.page-id-585 .get-in-touch {
+    display: none;
+  }
+  .wpcf7-spinner {
+    display: none !important;
+  }
+}
+
+/**
+  * Single Product Page
+  */
+
+body.single-product .container-wrap {
+  background-color: rgb(246, 246, 246);
+}
+.single-product .full-width-header {
+  /* full width header 300px high and image should cover full width */
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.single-product-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .nutritional-information-container {
+    padding: 20px !important;
+    text-align: center;
+  }
+}
+/* Legal Pages on Mobile */
+@media (max-width: 768px) {
+  body.page-id-1749 .container-wrap,
+  body.page-id-1507 .container-wrap,
+  body.page-id-1547 .container-wrap {
+    text-align: center !important;
+    padding: 30px !important;
+  }
+}
+
+.post-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px; /* Adjust spacing between grid items */
+	padding: 50px;
+}
+
+.post-grid-item {
+    box-sizing: border-box;
+	padding: 30px;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+	justify-content: space-between;
+    align-items: center; /* Center content horizontally */
+}
+
+.featured-image {
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure the image does not exceed container height */
+    object-fit: cover; /* Ensures the image covers the container */
+    object-position: center; /* Center the image */
+}
+
+.recipe-title {
+	padding: 20px 0;
+}
+.recipe-button {
+	background-color: transparent;
+	color: #111;
+	border: 2px solid #111;
+	padding: 13px 18px 13px 18px;
+	font-family: Brandon Grotesque Medium;
+    font-size: 16px;
+	font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Tablets */
+@media (max-width: 999px) {
+    .post-grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+		gap: 100px;
+		padding: 30px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .post-grid-container {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+}
+
+.acf-extra-subtitle {
+	font-family: "Brandon Grotesque Medium";
+	font-size: 18px;
+}
+.category-acf-content {
+	padding-right: 15px;
+	padding-left: 15px;
+}
